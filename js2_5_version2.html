@@ -1,0 +1,101 @@
+<html>
+  <head>
+    <title>Javascript-2 Problem 5</title>
+
+    <style>
+      form {
+        margin-bottom: 10px;
+        display: flex;
+      }
+
+      form label {
+        margin-right: 20px;
+      }
+
+      #add-state {
+        margin-left: 20px;
+        margin-top: 0px;
+        height: 20px;
+      }
+      button {
+        margin-top: 10px;
+      }
+
+      div {
+        margin-top: 20px;
+        min-height: 100px;
+        height: auto;
+        width: 200px;
+        border: 1px solid black;
+      }
+
+      #state-box p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label>Pick a state:</label>
+      <select id="states" size="10"></select>
+      <button type="button" id="add-state">Add State</button>
+    </form>
+    <div id="state-box"></div>
+    <button type="button" id="clear-state">Clear States</button>
+
+    <script>
+      let states = [
+        "Alabama",
+        "Alaska",
+        "Arizona",
+        "Arkansas",
+        "California",
+        "Colorado",
+        "Connecticut",
+        "Delaware",
+        "Florida",
+        "Georgia",
+        "Virginia",
+        "North Carolina",
+        "Massachusetts",
+      ];
+
+      const selectElement = document.getElementById("states");
+      const stateBox = document.getElementById("state-box");
+
+      // turn each state into one of the option
+      states.forEach((state, index) => {
+        const option = document.createElement("option");
+        option.textContent = state;
+        option.value = state;
+
+        //testing purpose
+        selectElement.insertAdjacentHTML(
+          "beforeend",
+          `<option value="${state}" ${
+            index == 0 ? "selected" : ""
+          }>${state}</option>`
+        );
+
+        // selectElement.appendChild(option);
+      });
+
+      // add respond to the add-state function
+      document.getElementById("add-state").addEventListener("click", () => {
+        const selectedState = selectElement.value;
+        const stateDiv = document.createElement("p");
+        stateDiv.textContent = selectedState;
+
+        // testing purpose
+        stateBox.insertAdjacentHTML("beforeend", `<p>${selectedState}</p>`);
+        // add state into box
+        // stateBox.appendChild(stateDiv);
+      });
+
+      // clear all the option inside state-box
+      document.getElementById("clear-state").addEventListener("click", () => {
+        stateBox.innerHTML = "";
+      });
+    </script>
+  </body>
+</html>
