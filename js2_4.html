@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Javascript-2 Problem 4</title>
+  </head>
+  <body>
+    <form>
+      <label>Name:</label>
+      <input id="name" />
+      <br />
+      <br />
+      <button type="button" id="hello">Hello</button>
+      <button type="button" id="good-bye">Good Bye</button>
+      <button type="button" id="greetings">Greetings</button>
+    </form>
+    <script>
+      window.onload = function () {
+        document.getElementById("hello").addEventListener("click", speak);
+        document.getElementById("good-bye").addEventListener("click", speak);
+        document.getElementById("greetings").addEventListener("click", speak);
+      };
+      function speak() {
+        let name = document.getElementById("name").value;
+        let prefix = this.textContent;
+        alert(prefix + " " + name);
+      }
+    </script>
+  </body>
+</html>

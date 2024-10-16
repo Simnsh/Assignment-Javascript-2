@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Javascript-2 Problem 2</title>
+  </head>
+  <body>
+    <ol id="name-list"></ol>
+    <script>
+      name_string = "Pat, Chris, Marlon, Ferncroft, Assunta";
+      name_array = name_string.split(", ");
+      name_array.forEach((each_string) => {
+        document
+          .getElementById("name-list")
+          .insertAdjacentHTML("beforeend", `<li>${each_string}</li>`);
+      });
+    </script>
+  </body>
+</html>

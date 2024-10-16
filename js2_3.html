@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Javascript-2 Problem 3</title>
+  </head>
+  <body>
+    <form>
+      <label>Name:</label>
+      <input id="name" />
+      <br />
+      <br />
+      <button type="button" id="hello" onclick="speak('Hello')">Hello</button>
+      <button type="button" id="good-bye" onclick="speak('Good Bye')">
+        Good Bye
+      </button>
+      <button type="button" id="greetings" onclick="speak('Greetings')">
+        Greetings
+      </button>
+    </form>
+    <script>
+      function speak(prefix) {
+        let name = document.getElementById("name").value;
+        alert(prefix + " " + name);
+      }
+    </script>
+  </body>
+</html>

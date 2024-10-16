@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Javascript-2 Problem 1</title>
+  </head>
+  <body>
+    <script>
+      sentence = prompt("Give me a sentence");
+      sentence_array = sentence.split(" ");
+
+      if (sentence_array.length == 1 && sentence_array[0] == "") {
+        document.write(0);
+      } else {
+        document.write(sentence_array.length);
+      }
+    </script>
+  </body>
+</html>
